@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+     <h1 align='center' style='color:red'> DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING </h1>
+	 <h2 align='center' style='color:blue'> Placements information </h2>
+
+
+    <table border='5' align='center' cellpadding='10px' style='width:50%' >
+
+		       <tr>
+		       <th style='color:SlateBlue'> company name </th>
+			   <th style='color:SlateBlue'> package </th>
+			   <th style='color:SlateBlue'> number of students placed </th>
+               </tr>
+            {% for i in p %}
+		        <tr>
+		        <td align='center'> {{i.companyname}} </td>
+		        <td align='center'> {{i.package}}</td>
+				<td align='center'> {{i.no_of_stud}} </td>
+		        </tr>
+            {% endfor %}
+
+    </table>
+</body>
+</html>

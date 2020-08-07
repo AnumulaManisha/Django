@@ -1,0 +1,53 @@
+{% load static %}
+
+<html lang="en">
+<head>
+  <title>Teacher Portal</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link href="{% static 'css\pagestyle.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class ="container">
+    <div class="wrapper" id="top_div">
+	       <div class="row">
+              <div class="col-sm-10">
+                  <br><br><h1><center>Department of Computer Science & Engineering</center></h1><p> </p>
+		          </div>
+		          <br><div class="col-sm-2">
+			                 <div id="logo_right">
+					                 <img src="{% static 'Images\logo.jpg' %}" ALT="some text" WIDTH=100 HEIGHT=100>
+			                 </div>
+	            </div>
+	       </div>
+    </div>
+  </div>
+  <div class="container con">
+                            <ul class="nav navbar-nav">
+                                <li><p style ="font-size:20px"><a href="">Home</a></p></li>
+
+                                 <li><p style ="font-size:20px"><a href="Teacherlogout/">Logout</a></p></li>
+
+                            </ul>
+                            <h4 class="pull-right s-name">Welcome {{ user.username }} </h4>
+
+  </div>
+
+  <div class ="container">
+    <div class="wrapper">
+      <!-- <div class="row"> -->
+            <br>
+            <!-- <div class="col-md-3"> -->
+                       <a href="upload/">
+                         <img src="{% static 'Images\Upload.jpg' %}"  alt="upload files">
+                          <h4>Upload</h4>
+                        </a>
+                <!-- </div> -->
+      <!-- </div> -->
+    </div>
+  </div>
+</body>
+</html>

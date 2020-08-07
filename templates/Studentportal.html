@@ -1,0 +1,148 @@
+{% load static %}
+
+
+<html lang="en">
+<head>
+  <title>Student portal</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <!--style type="text/css">
+    <?php include'C:\xampp\htdocs\MiniProject\css\pagestyle.css'; ?>
+    </style-->
+  <link href="{% static 'css\pagestyle.css' %}" rel="stylesheet" type="text/css">
+<!--style>
+ ul{
+  }
+ ul li
+ {
+ // background-color:green;
+  width:150px;
+  display:inline-block;
+  height:40px;
+  line-height:40px;
+  text-align:center;
+  }
+  ul li a
+   {
+   display:inline-block;
+   color:red;
+   text-decoration:none;
+   }
+  ul li a:hover
+   {
+   background-color:orange;
+   color:blue;
+   }
+</style>-->
+</head>
+<body>
+
+<div class ="container">
+<div class="wrapper" id="top_div">
+	<div class="row">
+        <div class="col-sm-10">
+                                 <br><br><h1><center>Department of Computer Science & Engineering</center></h1><p> </p>
+		</div>
+		 <br>
+        <div class="col-sm-2">
+			   <div id="logo_right">
+					<img src="{% static 'Images\logo.jpg' %}" ALT="some text" WIDTH=100 HEIGHT=100>
+			   </div>
+        </div>
+	</div>
+</div>
+</div>
+  <div class="container con">
+        <!--div class="wrapper1"-->
+
+
+                            <!--button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button-->
+                            <ul class="nav navbar-nav">
+                                <li><p style ="font-size:20px"><a href="Studentportal.html">Home</a></p></li>
+
+
+
+                                 <li><p style ="font-size:20px">
+
+                                   <a href="logout/">Logout</a></p></li>
+
+                            </ul>
+                            <h4 class="pull-right s-name">Welcome {{ user.username }}  </h4>
+
+               <!-- </div> -->
+  </div>
+
+  <div class ="container">
+<!-- <div class="panel panel-default"> -->
+      <div class="wrapper">
+    <!-- <div class="panel-body"> -->
+	<div class="row">
+    <br><div class="col-md-3">
+				 <a href="Attendance/">
+                     <img src="{% static 'Images\Attendance.png' %}"  alt="attendance">
+                     <h5>Attendance</h5>
+                 </a>
+		</div>
+		 <div class="col-md-3">
+			   	<a href="Timetable/">
+                    <img src="{% static 'Images\Timetable.png' %}"  alt="timetable">
+                    <h5>Timetable</h5>
+                </a>
+         </div>
+		<div class="col-md-3">
+			   	<a href="BESyllabus/">
+                    <img src="{% static 'Images\Syllabus.png' %}"  alt="syllabus">
+                    <h5>Syllabus</h5>
+                </a>
+        </div>
+		<div class="col-md-3">
+			   	<a href="QuestionPapers/">
+                    <img src="{% static 'Images\QuestionPapers.png' %}"  alt="syllabus">
+                    <h5>Question papers</h5>
+                </a>
+        </div>
+		<div class="col-md-3">
+			   	<a href="MarksList/">
+                    <img src="{% static 'Images\MarksList.jpg' %}"  alt="syllabus">
+                    <!-- style="border:1px solid red"> -->
+                    <h5>Marks list</h5>
+                </a>
+        </div>
+        <div class="col-md-3">
+          <a href="FeedbackForm/">
+              <img src="{% static 'Images\Feedback.jpg' %}"  alt="syllabus">
+              <h5>Feedback</h5>
+          </a>
+        </div>
+        <div class="col-md-3">
+          <a href="StudyMaterials/">
+              <img src="{% static 'Images\Study.png' %}"  alt="study materials">
+              <h5>Study Materials</h5>
+          </a>
+        </div>
+        <div class="col-md-3">
+          <a href="ReferenceBooks/">
+              <img src="{% static 'Images\Link.png' %}"  alt="reference books">
+              <h5>Reference Books</h5>
+          </a>
+        </div>
+        <div class="col-md-3">
+          <a href="UploadDisplay/">
+              <img src="{% static 'Images\Assignment.png' %}"  alt="reference books">
+              <h5>Assignments</h5>
+          </a>
+        </div>
+ </div>
+</div>
+</div>
+<!-- </div> -->
+</body>
+</html>

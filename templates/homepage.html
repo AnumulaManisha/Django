@@ -1,0 +1,160 @@
+{% load static %}
+
+<html lang="en">
+<head>
+  <title>Home Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+ <link href=" {% static 'css\pagestyle.css' %} " rel="stylesheet" type="text/css">
+</head>
+<body>
+  <div class ="container con1">
+    <div class="wrapper" id="top_div">  
+      <div class="row">
+        <div class="col-sm-2">
+          <div id="logo_left">
+            <br> <img src=" {% static 'Images\centenarylogo.jpg' %} " ALT="some text">
+          </div>    
+        </div>
+        <div class="col-sm-8">
+            <p> </p><h2><b><center>OSMANIA UNIVERSITY</center></b></h2>
+            <h3><center>Department of Computer Science & Engineering</center></h3><p> </p>
+		    </div><br>
+        <div class="col-sm-2">
+          <div id="logo_right">
+				    <img src=" {% static 'Images\logo.jpg' %} " ALT="some text">
+          </div>		
+        </div>
+      </div>
+    </div>
+  </div>	
+<div class="container con">
+  	<ul >
+   		 <li><a href="homepage.html">Home</a></li>
+    		<li><a href="faculty/">Faculty details</a></li>
+    		<li><a href="about/">About us</a></li>
+    		<li><a href="achieve/">Achievements</a></li>
+    		<li><a href="contact/">contact us</a></li>
+        <li><a href="placement/">Placement Info</a></li>
+   	</ul>
+</div>
+<div class="container con2">
+   <div class="wrapper">
+    		<br><center>
+    			<div id="outerbox">
+     				 <div id="sliderbox">
+	
+						<img src="{% static 'Images\pic1.jpg' %}">
+						<img src="{% static 'Images\pic2.jpg' %}">
+						<img src="{% static 'Images\pic3.jpg' %}">
+						<img src="{% static 'Images\pic4.jpg' %}">
+      				</div>
+   			  </div>
+		<br><hr class="hidden-sm hidden-md hidden-lg">
+   </center>
+    	</div>
+</div>
+<div class="container con3">
+  <div class="wrapper1">
+   <div class="row">
+       <h3><b>Logins</b></h3>
+      <p>   </p>
+      <!-- <form> -->
+			<div class="col-sm-4">
+				<img src="{% static 'Images\Student.png' %}"><br>
+				<a href="Studentlogin/">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="button" type="button" name="Student login" value="Student login">
+				</a>
+			</div>
+			<div class="col-sm-4">
+				<img src="{% static 'Images\Teacher.png' %}"><br>
+  				<a href="Teacherlogin/">
+				&nbsp;&nbsp;&nbsp;&nbsp;<input id="button" type="button" name="Teacher login" value="Teacher login">
+				</a>
+			</div>
+			<div class="col-sm-4">
+                <img src="{% static 'Images\Admin.png' %}"><br><br>
+                <a href="AdminHome.php">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="button" type="button" name="Admin login" value="Admin login">
+                </a>
+			</div>
+    <!-- </form> -->
+      <hr class="hidden-sm hidden-md hidden-lg">
+    </div>
+  </div>
+</div>
+<br><div class="container" style="background-color:white;padding-left:10px;">
+    <div class="header-wrapper"><br>
+        <div class="panel panel-default">
+				<div class="panel-heading">
+                    <h2 style="color:black; padding-top:10px;padding-bottom: 10px;padding-left:10px;"><b>NEWS AND ANNOUNCEMENTS</b></h2>
+				</div>
+        <div class="clear"></div>
+        <div class="newsScroller" id="newsScroll">
+          <ol>
+                  <li>
+                            <a href="https://examcell.uceou.org/new%20online%20appli.pdf" style="color:black;">Notification of B.E.VIII-Sem &amp; IV/IV-II-Sem, VI-Sem &amp; III/IV-II-Sem,IV-Sem &amp; II/IV-II-Sem Main and VII-Sem &amp; IV/IV-I-Sem, V-Sem &amp; III/IV-I-Sem,III-Sem &amp; II/IV-I-Sem (Supply.) Examinatin April 2019.
+                        <!-- <img src="Images/new2.gif" alt='new' width='45px;' style='float:left;'> -->
+                      </a>
+                  </li><br>
+                  <li>   
+                      <a href="https://examcell.uceou.org/20190318163033.pdf" style="color:black;">Results of Pre-P.hD. I-Semester  Make-up Examination Feb/March 2019.
+                        <img src="{% static 'Images/new2.gif' %}" alt='new' width='45px;' style='float:left;'>
+                    </a>
+                  </li><br>
+                  <li>       
+                      <a href="http://www.uceou.edu/Brochure%20ETDA%202019%20final2.pdf" style="color:black;">One Week Short term Course on &quot;Experimental Techniques and Data Analysis&quot; during 22-26 April 2019.
+                        <img src="{% static 'Images/new2.gif' %}" alt='new' width='45px;' style='float:left;'>
+                      </a>
+                            <!-- </span>(Updated on 18-03-2019,12:00 PM).</span> -->
+                  </li><br>
+                  <li>  
+                      <a href="http://www.uceou.edu/GIAN%20BROCHURE%20NEW.pdf" style="color:black;">One week GIAN Course on &quot;.
+                        <img src="{% static 'Images/new2.gif' %}" alt='new' width='45px;' style='float:left;'>
+                      </a>
+                  </li><br>
+                  <li>
+                      <a href="http://www.uceou.edu/inter%20net/Internet%20access%20%20%20account-student.pdf" style="color:black;">Apllication forms for internet access.</a>
+                  </li><br>
+              </ol>
+    </div>
+    <script type="text/javascript">
+    // javascript will go here
+        $(function () {
+            $('#newsScroll').each(function () {
+                var scroller = $(this);
+                var list = scroller.children('ol');
+
+                var listH = list.height();
+                var scrollerH = scroller.height();
+                list.css({
+                    marginTop: scrollerH,
+                    marginBottom: scrollerH
+                });
+                scroller.css({
+                    overflow: 'hidden'
+                });
+                var isOver = false;
+                scroller.bind('mouseenter mouseleave', function (e) {
+                    isOver = (e.type == 'mouseenter');
+                });
+                var scroll = 0;
+                setInterval(function () {
+                    if (isOver) return;
+                    scroll++;
+                    var newTop = scroll % (listH + scrollerH);
+                    scroller.scrollTop(newTop);
+                }, 30);
+            });
+        });
+    </script>  
+    
+    </div>
+   </div>
+  </div>
+  
+</body>
+</html>

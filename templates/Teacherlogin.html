@@ -1,0 +1,94 @@
+{% load static %}
+
+<html>
+<head>
+	<title>Login Page</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<!--style type="text/css">
+    <?php include'C:\xampp\htdocs\MiniProject\css\custom.css'; ?>
+    </style-->
+	<link href="{% static 'css\CUSTOM.CSS' %}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container">
+	<div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 loginbox">
+		<div class="panel panel-info" >
+			<div class="panel-heading">
+				<div class="panel-title"> Teacher login </div>
+				<!-- <div class="forgot-password"> <a href="#">Forgot password?</a> </div>  -->
+			</div>
+			<div class="panel-body panel-pad">
+				<div id="login-alert" class="alert alert-danger col-sm-12 login-alert"></div>
+					<form id="loginform" class="form-horizontal" role="form" action="" method="post" onsubmit="return validation()" class="bg-light">
+						{% csrf_token %}
+						<div class="input-group margT25">
+							<span class="input-group-addon">
+								<i class="glyphicon glyphicon-user"></i>
+							</span>
+							<input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username">
+							<!--input id="email" type="email" class="form-control" name="email" placeholder="email" autocomplete="off" required-->
+						</div>
+						<div class="input-group margT25">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+							<input id="password" type="password" class="form-control" name="password" placeholder="password" autocomplete="off" required>
+						</div>
+						<div class="input-group">
+							<div class="checkbox">
+								<label>
+									<input id="login-remember" type="checkbox" name="remember" value="1"> Remember me
+								</label>
+							</div>
+						</div>
+						<!--div class="form-group margT10">
+						< Button
+							<div class="col-sm-12 controls">
+								<a id="btn-login" href="#" class="btn btn-block btn-success">Login </a>
+							</div>
+						</div> -->
+						<input class="btn btn-block btn-success" name="submit" type="submit" value="Login">
+						<div class="form-group">
+							<div class="col-md-12 control">
+								<div class="no-acc">
+									Don't have an account!
+									<a href="Teachersignup/"> Sign Up Here </a>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+<div class="container">
+		{% for message in messages %}
+		<h3 align="center"> {{message}} </h3>
+		{% endfor %}
+</div>
+	<div id="user" class="text-center" style="color:red;"></div>
+<script type="text/javascript">
+	function validation()
+	{
+		var email = document.getElementById('email').value;
+		var password = document.getElementById('password').value;
+
+	    if(email.indexOf('@') <= 0)
+		{
+			document.getElementById('user').innerHTML = "EMAIL: ** @ Invalid Position";
+			return false;
+		}
+		else if((email.charAt(email.length-4)!='.') && (email.charAt(email.length-3)!='.'))
+		{
+			document.getElementById('user').innerHTML = "EMAIL: ** . Invalid Position";
+			return false;
+		}
+		else if((password.length < 6) || (password.length > 20))
+		{
+			document.getElementById('user').innerHTML = "PASSWORD: ** Length must be in between 5-20 characters";
+			return false;
+		}
+	}
+</script>
+</body>
+</html>

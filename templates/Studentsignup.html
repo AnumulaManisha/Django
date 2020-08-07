@@ -1,0 +1,118 @@
+{% load static %}
+
+<html>
+<head>
+	<title>Student Signup</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+     <link href="{% static 'css\custom.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container">
+	<p></p>
+  	<div id="signupbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 signup-box">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+                <div class="panel-title"><center><h2>STUDENT SIGNUP </h2></center></div>
+			</div>
+			<div class="panel-body panel-pad">
+				<form id="signupform" class="form-horizontal" role="form" action="" method="post" onsubmit="return validation()" class="bg-light">
+					<!-- action="demo.php" method="POST">  -->
+					{% csrf_token %}
+					<div class="form-group">
+						<label for="email" class="col-md-3 control-label">Email</label>
+					 	<div class="col-md-9">
+					 		<input type="email" class="form-control" name="email" id="email" placeholder="Email Address" autocomplete="off" required>
+					 	</div>
+					</div>
+					<div class="form-group">
+					 	<label for="firstname" class="col-md-3 control-label">First Name</label>
+					 	<div class="col-md-9">
+					 		<input type="text" class="form-control" name="first_name" id="firstname" placeholder="First Name" autocomplete="off" required>
+					 	</div>
+					</div>
+					<div class="form-group">
+					 	<label for="lastname" class="col-md-3 control-label">Last Name</label>
+					 	<div class="col-md-9">
+					 		<input type="text" class="form-control" name="last_name" id="lastname" placeholder="Last Name" autocomplete="off" required>
+					 	</div>
+					</div>
+
+                    <div class="form-group">
+						<label for="username" class="col-md-3 control-label">User Name</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control" name="username" id="username" placeholder="UserName" autocomplete="off" required>
+						</div>
+					</div>
+					<div class="form-group">
+					 	<label for="password1" class="col-md-3 control-label">Password</label>
+					 	<div class="col-md-9">
+					 		<input type="password" class="form-control" name="password1" id="password1" placeholder="Password" autocomplete="off" required>
+					 	</div>
+					</div>
+					<div class="form-group">
+					 	<label for="password2" class="col-md-3 control-label">Confirm Password</label>
+					 	<div class="col-md-9">
+					 		<input type="password" class="form-control" name="password2" id="password2" placeholder="Confirm Password" autocomplete="off" required>
+					 	</div>
+					</div>
+					<div class="form-group">
+					 <!-- Button -->
+					 	<div class="col-md-offset-3 col-md-9">
+					 		 <!-- <button id="btn-signup" type="button" class="btn btn-info"> <i class="icon-hand-right"></i> &nbsp; Sign Up </button> -->
+					 		 <input class="btn btn-success" name="submit" type="submit" value="Sign Up">
+					 	</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+		{% for message in messages %}
+		<h3 align="center"> {{message}} </h3>
+		{% endfor %}
+</div>
+<div id="user" class="text-center" style="color:red;"></div>
+<script type="text/javascript">
+	function validation()
+	{
+		var email = document.getElementById('email').value;
+		var firstname = document.getElementById('firstname').value;
+		var lastname = document.getElementById('lastname').value;
+		var password = document.getElementById('password').value;
+		var rollno = document.getElementById('rollno').value;
+
+		if((firstname.length < 3) || (firstname.length > 20))
+		{
+			document.getElementById('user').innerHTML = "FIRSTNAME: ** Length must be in between 3-20 characters";
+			return false;
+		}
+		else if(!isNaN(firstname))
+		{
+			document.getElementById('user').innerHTML = "FIRSTNAME: ** Only characters are allowed";
+			return false;
+		}
+
+		else if(email.indexOf('@') <= 0)
+		{
+			document.getElementById('user').innerHTML = "EMAIL: ** @ Invalid Position";
+			return false;
+		}
+		else if((email.charAt(email.length-4)!='.') && (email.charAt(email.length-3)!='.'))
+		{
+			document.getElementById('user').innerHTML = "EMAIL: ** . Invalid Position";
+			return false;
+		}
+
+		else ((password.length < 6) || (password.length > 20))
+		{
+			document.getElementById('user').innerHTML = "PASSWORD: ** Length must be in between 6-20 characters";
+			return false;
+		}
+
+	}
+</script>
+</body>
+</html>
